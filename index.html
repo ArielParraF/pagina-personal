@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ariel Parra Fernández</title>
+  <meta name="description" content="Ariel Iván Parra Fernández — Jefe de Proyectos TI e Ingeniero en Gestión Informática con más de 20 años de experiencia en desarrollo de software, análisis y gestión de proyectos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f6f2;
+      --surface: #ffffff;
+      --text: #1d2330;
+      --muted: #5b6475;
+      --line: #e3e1da;
+      --accent: #2f5d8a;
+      --accent-soft: #e6eef6;
+      --radius: 14px;
+      --max: 980px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #12161d;
+        --surface: #1a2029;
+        --text: #e8eaee;
+        --muted: #9aa3b2;
+        --line: #2a313c;
+        --accent: #7fb0e0;
+        --accent-soft: #1f2a38;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #12161d;
+      --surface: #1a2029;
+      --text: #e8eaee;
+      --muted: #9aa3b2;
+      --line: #2a313c;
+      --accent: #7fb0e0;
+      --accent-soft: #1f2a38;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 "Inter", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+
+    /* Navegación */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; gap: 16px; }
+    nav .brand { font-weight: 700; text-decoration: none; color: var(--text); white-space: nowrap; }
+    nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; overflow-x: auto; }
+    nav ul a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; white-space: nowrap; }
+    nav ul a:hover { color: var(--accent); }
+
+    /* Portada */
+    header.hero { padding: 88px 0 64px; }
+    .eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 12px; }
+    h1 {
+      font-family: "Fraunces", Georgia, serif; font-weight: 600;
+      font-size: clamp(2.3rem, 6vw, 3.8rem); line-height: 1.08; margin: 0 0 20px;
+    }
+    .lead { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin: 0 0 32px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-block; padding: 11px 20px; border-radius: 999px;
+      font-weight: 600; font-size: 15px; text-decoration: none;
+      border: 1px solid var(--accent);
+    }
+    .btn.primary { background: var(--accent); color: var(--bg); }
+    .btn.ghost { color: var(--accent); }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 48px; max-width: 620px; }
+    .stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+    .stat b { display: block; font-family: "Fraunces", Georgia, serif; font-size: 1.8rem; color: var(--accent); line-height: 1.1; }
+    .stat span { font-size: 13px; color: var(--muted); }
+
+    /* Secciones */
+    section { padding: 56px 0; border-top: 1px solid var(--line); }
+    h2 { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.9rem; margin: 0 0 28px; }
+    h3 { font-size: 1.05rem; margin: 0; }
+    p { margin: 0 0 14px; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+    .chips li { background: var(--accent-soft); color: var(--accent); padding: 5px 12px; border-radius: 999px; font-size: 14px; font-weight: 500; }
+    .skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+    .card h3 { margin-bottom: 14px; }
+
+    /* Experiencia */
+    .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+    .timeline::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
+    .job { position: relative; padding: 0 0 32px 36px; }
+    .job::before {
+      content: ""; position: absolute; left: 0; top: 6px; width: 16px; height: 16px;
+      border-radius: 50%; background: var(--bg); border: 3px solid var(--accent);
+    }
+    .job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
+    .job .when { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+    .job .org { color: var(--accent); font-weight: 500; margin: 2px 0 8px; }
+    .job p { color: var(--muted); }
+
+    /* Proyectos */
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
+    .project .client { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+    .project h3 { margin: 4px 0 6px; }
+    .project .meta { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
+    .project .tech { font-size: 13px; color: var(--muted); margin: 0; }
+
+    /* Formación */
+    .edu { display: grid; grid-template-columns: 1fr; gap: 0; }
+    .edu-item { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .edu-item:last-child { border-bottom: 0; }
+    .edu-item small { display: block; color: var(--muted); font-size: 14px; }
+    .edu-item .when { color: var(--muted); font-size: 14px; white-space: nowrap; }
+
+    /* Contacto */
+    .contact { text-align: center; padding: 72px 0 88px; }
+    .contact p { color: var(--muted); max-width: 520px; margin: 0 auto 24px; }
+    footer { text-align: center; color: var(--muted); font-size: 13px; padding: 24px 0 40px; }
+
+    @media (max-width: 640px) {
+      nav ul { display: none; }
+      header.hero { padding: 56px 0 40px; }
+      .stats { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+      .stat { padding: 12px; }
+      .stat b { font-size: 1.4rem; }
+      .edu-item { flex-direction: column; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#inicio">Ariel Parra</a>
+    <ul>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#formacion">Formación</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <p class="eyebrow">Jefe de Proyectos TI · Santiago, Chile</p>
+    <h1>Ariel Iván Parra Fernández</h1>
+    <p class="lead">Ingeniero en Gestión Informática. Llevo más de 20 años construyendo y liderando software, primero como desarrollador y analista, y hoy dirigiendo proyectos en el sector público.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:aparraf@gmail.com">Contáctame</a>
+      <a class="btn ghost" href="#experiencia">Ver experiencia</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>20+</b><span>años de experiencia</span></div>
+      <div class="stat"><b>4+</b><span>años como Jefe de Proyectos</span></div>
+      <div class="stat"><b>15+</b><span>organizaciones atendidas</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="sobre-mi">
+  <div class="wrap">
+    <h2>Sobre mí</h2>
+    <p>Me titulé de Ingeniero en Gestión Informática en la Universidad Técnica de Chile (INACAP). La mayor parte de mi carrera la he dedicado al desarrollo y análisis de aplicaciones de escritorio y web, enfocado en arquitectura de software y modelamiento de datos. He trabajado como analista de sistemas y desarrollador senior en equipos ágiles, y como líder técnico en proyectos pequeños y medianos.</p>
+    <p>Desde 2022 trabajo como Jefe de Proyecto. Levanto y analizo requerimientos y diseño soluciones con enfoques ágiles, tradicionales o híbridos. También coordino a usuarios y equipos en todas las fases del proyecto y reporto los avances para cumplir los objetivos de costo, plazo y calidad.</p>
+  </div>
+</section>
+
+<section id="habilidades">
+  <div class="wrap">
+    <h2>Habilidades</h2>
+    <div class="skill-groups">
+      <div class="card">
+        <h3>Gestión de proyectos</h3>
+        <ul class="chips">
+          <li>Scrum</li><li>Enfoques híbridos</li><li>Levantamiento de requerimientos</li>
+          <li>Historias de usuario</li><li>Gestión de riesgos</li><li>Gestión del cambio</li>
+          <li>Cartas Gantt</li><li>Bases de licitación</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Desarrollo</h3>
+        <ul class="chips">
+          <li>C#</li><li>VB .NET</li><li>.NET Core</li><li>ASP.NET MVC</li>
+          <li>LINQ</li><li>Entity Framework</li><li>Servicios REST</li>
+          <li>JavaScript</li><li>jQuery</li><li>Ajax</li><li>HTML5 / CSS3</li>
+          <li>Bootstrap</li><li>DevExpress</li><li>Java / Spring MVC</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Datos y herramientas</h3>
+        <ul class="chips">
+          <li>SQL Server</li><li>Oracle (PL/SQL)</li><li>Modelamiento de datos</li>
+          <li>Diccionarios de datos</li><li>GitLab</li><li>SVN</li><li>TFS</li>
+          <li>GitHub Copilot</li><li>Mockups</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="wrap">
+    <h2>Experiencia</h2>
+    <ol class="timeline">
+      <li class="job">
+        <div class="job-head"><h3>Jefe de Proyectos</h3><span class="when">Oct 2025 – Actual</span></div>
+        <div class="org">Valposystems · Instituto de Previsión Social (IPS)</div>
+        <p>Análisis y diseño de soluciones para el negocio de asignaciones familiares, en especial la cuenta corriente de asignaciones familiares y los informes financieros. Especificaciones de requerimientos, historias de usuario, modelos de datos y desarrollo en Oracle (tablas, packages y procedimientos), además de la coordinación del paso a QA y producción.</p>
+      </li>
+      <li class="job">
+        <div class="job-head"><h3>Jefe de Proyectos</h3><span class="when">Feb 2024 – Ago 2025</span></div>
+        <div class="org">Tecnova IT Solutions · Instituto de Previsión Social (IPS)</div>
+        <p>Diseño de soluciones para la cuenta corriente de asignaciones familiares y los informes financieros. Definición de objetivos y alcance, planes de trabajo, gestión de riesgos y de las partes interesadas, y modelos de datos y mockups.</p>
+      </li>
+      <li class="job">
+        <div class="job-head"><h3>Jefe de Proyectos</h3><span class="when">Abr 2022 – Ene 2024</span></div>
+        <div class="org">KPAZ · Instituto de Previsión Social (IPS)</div>
+        <p>Proyectos de asignaciones familiares y de la Pensión Garantizada Universal (PGU). Bases de licitación, actas de inicio, cartas Gantt, seguimiento de avances y gestión del cambio.</p>
+      </li>
+      <li class="job">
+        <div class="job-head"><h3>Analista Desarrollador Senior</h3><span class="when">Ene 2021 – Mar 2022</span></div>
+        <div class="org">KPAZ · Banco Itaú</div>
+        <p>Líder de desarrollo de la aplicación web de control y gestión de proyectos del área de Robotics. Usé .NET Core, MVC C#, SQL Server 2014, jQuery UI y Bootstrap.</p>
+      </li>
+      <li class="job">
+        <div class="job-head"><h3>Analista Desarrollador Backend Senior</h3><span class="when">Nov 2019 – Mar 2020</span></div>
+        <div class="org">Kibernum · Legaltec</div>
+        <p>Servicios de Windows para la inscripción electrónica de vehículos (proyecto SPIEV), integrados con los servicios del SII.</p>
+      </li>
+      <li class="job">
+        <div class="job-head"><h3>Desarrollador Senior, Analista de Sistemas</h3><span class="when">Jun 2019 – Sep 2019</span></div>
+        <div class="org">Fiusoft · Isapre Consalud</div>
+        <p>Sistema web de Insuficiencias y Complementos, con C# MVC, servicios Fuse, BPM y Oracle.</p>
+      </li>
+      <li class="job">
+        <div class="job-head"><h3>Desarrollador Senior, Analista de Sistemas</h3><span class="when">Jul 2016 – Mar 2019</span></div>
+        <div class="org">Intellego (Axity) · Vida Cámara</div>
+        <p>Cotizador web, renovación automática de pólizas y sitio privado de clientes, con VB .NET, REST, jqWidgets, Bootstrap y SQL Server.</p>
+      </li>
+      <li class="job">
+        <div class="job-head"><h3>Ingeniero de Software</h3><span class="when">Jul 2014 – Abr 2016</span></div>
+        <div class="org">Softmaker</div>
+        <p>Sistema de leasing con C# .NET, DevExpress y SQL Server 2012.</p>
+      </li>
+      <li class="job">
+        <div class="job-head"><h3>Analista Desarrollador Senior y Líder Técnico</h3><span class="when">Abr 2006 – Feb 2014</span></div>
+        <div class="org">Anticipa S.A.</div>
+        <p>Proyectos para Servipag, Falabella Viajes, ChileCompra, MINVU, SENCE, Entel y otros. Hice desarrollo, análisis de requerimientos, modelamiento de datos y arquitectura de software.</p>
+      </li>
+      <li class="job">
+        <div class="job-head"><h3>Desarrollador e Instalador de Aplicaciones Web</h3><span class="when">Ago 2005 – Mar 2006</span></div>
+        <div class="org">Argentis S.A.</div>
+        <p>Desarrollo e instalación del gestor de contenidos NeoPortal para empresas como Agrosuper, BHP Billiton y Vida Integra.</p>
+      </li>
+      <li class="job">
+        <div class="job-head"><h3>Desarrollador y Soporte Técnico</h3><span class="when">May 2002 – Ago 2005</span></div>
+        <div class="org">AFEX S.A.</div>
+        <p>Sistemas de remuneraciones y de giros nacionales e internacionales en Visual Basic 6 y SQL Server 7. También administré la central telefónica Alcatel A4400.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="proyectos">
+  <div class="wrap">
+    <h2>Proyectos destacados</h2>
+    <div class="projects">
+      <article class="card project">
+        <div class="client">MINVU</div>
+        <h3>Pago de Beneficios Dentales</h3>
+        <p class="meta">Líder Técnico · 2013 – 2014</p>
+        <p class="tech">C# MVC, SQL Server 2008 R2, jQuery UI</p>
+      </article>
+      <article class="card project">
+        <div class="client">MINVU</div>
+        <h3>Pago de Beneficios Médicos</h3>
+        <p class="meta">Analista Programador · 2012 – 2013</p>
+        <p class="tech">C# MVC, SQL Server 2008 R2, Ajax</p>
+      </article>
+      <article class="card project">
+        <div class="client">MINVU</div>
+        <h3>Trazabilidad 2 · Proyecto MUNIN</h3>
+        <p class="meta">Analista Programador · 2014</p>
+        <p class="tech">C# MVC (TFS), SQL Server 2008 R2</p>
+      </article>
+      <article class="card project">
+        <div class="client">SENCE</div>
+        <h3>Programas de Capacitación</h3>
+        <p class="meta">Analista Programador · 2013</p>
+        <p class="tech">C# MVC, SQL Server 2008 R2</p>
+      </article>
+      <article class="card project">
+        <div class="client">Entel</div>
+        <h3>Máxima Conexión · Gestión Web</h3>
+        <p class="meta">Analista Programador · 2013</p>
+        <p class="tech">Spring MVC, WebLogic, Oracle</p>
+      </article>
+      <article class="card project">
+        <div class="client">Falabella Viajes</div>
+        <h3>ProductCore · Motor de Productos</h3>
+        <p class="meta">Analista Programador · 2010 – 2011</p>
+        <p class="tech">C# .NET, SQL Server 2005</p>
+      </article>
+      <article class="card project">
+        <div class="client">ChileCompra</div>
+        <h3>Control de Descarga Masiva de Adjuntos</h3>
+        <p class="meta">Analista Programador · 2011 – 2012</p>
+        <p class="tech">VB .NET Web Forms, SQL Server 2005</p>
+      </article>
+      <article class="card project">
+        <div class="client">Servipag</div>
+        <h3>Proyecto Proteus</h3>
+        <p class="meta">Área de aplicaciones · 2006 – 2009</p>
+        <p class="tech">C# Web Forms, XML/XSL, SQL Server 2000</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="formacion">
+  <div class="wrap">
+    <h2>Formación</h2>
+    <div class="skill-groups">
+      <div class="card">
+        <h3>Educación</h3>
+        <div class="edu">
+          <div class="edu-item"><div>Ingeniería en Gestión Informática<small>Universidad Técnica de Chile (INACAP)</small></div><span class="when">1998 – 2004</span></div>
+        </div>
+        <h3 style="margin-top:24px">Idiomas</h3>
+        <div class="edu">
+          <div class="edu-item"><div>Español<small>Nativo</small></div></div>
+          <div class="edu-item"><div>Inglés<small>Lectura y escritura fluidas, comunicación oral funcional</small></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Cursos y certificaciones</h3>
+        <div class="edu">
+          <div class="edu-item"><div>GitHub Copilot<small>Código Facilito</small></div><span class="when">2026</span></div>
+          <div class="edu-item"><div>Habilidades blandas para equipos de trabajo<small>Platzi</small></div><span class="when">2023</span></div>
+          <div class="edu-item"><div>Habilidades blandas para el desarrollo profesional<small>Platzi</small></div><span class="when">2023</span></div>
+          <div class="edu-item"><div>Planificación de proyectos<small>Platzi</small></div><span class="when">2022</span></div>
+          <div class="edu-item"><div>Fundamentos de Project Management<small>Platzi</small></div><span class="when">2022</span></div>
+          <div class="edu-item"><div>Curso práctico de Project Management<small>Platzi</small></div><span class="when">2022</span></div>
+          <div class="edu-item"><div>Scrum Master Professional Certificate<small>CertiProf</small></div><span class="when">2022</span></div>
+          <div class="edu-item"><div>HTML5, CSS3 y JavaScript para WebApps<small>Universidad Politécnica de Madrid</small></div><span class="when">2014</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact">
+  <div class="wrap">
+    <h2>Conversemos</h2>
+    <p>¿Tienes un proyecto o una oportunidad en la que pueda aportar? Escríbeme y te respondo a la brevedad.</p>
+    <a class="btn primary" href="mailto:aparraf@gmail.com">aparraf@gmail.com</a>
+  </div>
+</section>
+
+<footer>© 2026 Ariel Iván Parra Fernández</footer>
+
+</body>
+</html>
