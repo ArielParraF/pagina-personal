@@ -1,0 +1,29 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "buried-raster",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-23T01:21:43.289Z",
+        "reason": "Claude: the hero photos sit at opacity 0 only between steps of the slow crossfade; each one shows in turn"
+      },
+      {
+        "rule": "overused-font",
+        "value": "fraunces",
+        "createdAt": "2026-10-23T01:21:43.939Z",
+        "reason": "User asked to keep the v1 design, which uses Fraunces"
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-10-23T01:21:44.996Z",
+        "reason": "User asked to keep the v1 design, which uses Inter"
+      }
+    ]
+  }
+}

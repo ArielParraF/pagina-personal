@@ -3,211 +3,407 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ariel Parra Fernández</title>
-  <meta name="description" content="Ariel Iván Parra Fernández — Jefe de Proyectos TI e Ingeniero en Gestión Informática con más de 20 años de experiencia en desarrollo de software, análisis y gestión de proyectos.">
+  <title>Ariel Parra Fernández · Jefe de Proyectos TI</title>
+  <meta name="description" content="Ariel Iván Parra Fernández, Jefe de Proyectos TI en Santiago de Chile. Más de 20 años en software: desarrollo, análisis, liderazgo técnico y gestión de proyectos.">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:title" content="Ariel Parra Fernández · Jefe de Proyectos TI">
+  <meta property="og:description" content="Jefe de Proyectos TI en Santiago de Chile. Más de 20 años construyendo y liderando software.">
+  <meta property="og:url" content="https://arielparraf.github.io/pagina-personal/">
+  <meta property="og:image" content="https://arielparraf.github.io/pagina-personal/assets/atardecer.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%232f5d8a'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='26' fill='white'%3EAP%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ariel Iván Parra Fernández",
+    "jobTitle": "Jefe de Proyectos TI",
+    "email": "mailto:aparraf@gmail.com",
+    "url": "https://arielparraf.github.io/pagina-personal/",
+    "sameAs": ["https://cl.linkedin.com/in/ariel-parra-fernandez-890a9977"],
+    "alumniOf": "Universidad Técnica de Chile (INACAP)",
+    "address": { "@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL" }
+  }
+  </script>
+  <script>document.documentElement.classList.add('js')</script>
   <style>
     :root {
-      --bg: #f7f6f2;
-      --surface: #ffffff;
-      --text: #1d2330;
-      --muted: #5b6475;
-      --line: #e3e1da;
+      --bg: #f5f5f2;
+      --surface: #eaeae5;
+      --ink: #1d2330;
+      --muted: #545d6e;
       --accent: #2f5d8a;
-      --accent-soft: #e6eef6;
-      --radius: 14px;
-      --max: 980px;
+      --accent-ink: #ffffff;
+      --bar: #c3c8d0;
+
+      --display: "Fraunces", Georgia, serif;
+      --text: "Inter", system-ui, sans-serif;
+      --step-display: clamp(2.6rem, 6.4vw, 6rem);
+      --step-heading: clamp(1.9rem, 2.8vw, 2.5rem);
+      --step-statement: clamp(1.3rem, 1.8vw, 1.625rem);
+      --step-body: 1.0625rem;
+      --step-small: 0.875rem;
+
+      --margin: clamp(20px, 3vw, 40px);
+      --gap: 24px;
+      --section: clamp(96px, 12vw, 176px);
+      --ease: cubic-bezier(.2, .7, .2, 1);
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
         --bg: #12161d;
-        --surface: #1a2029;
-        --text: #e8eaee;
-        --muted: #9aa3b2;
-        --line: #2a313c;
+        --surface: #1b212b;
+        --ink: #e8eaee;
+        --muted: #a3acba;
         --accent: #7fb0e0;
-        --accent-soft: #1f2a38;
+        --accent-ink: #12161d;
+        --bar: #3a4352;
       }
     }
     :root[data-theme="dark"] {
       --bg: #12161d;
-      --surface: #1a2029;
-      --text: #e8eaee;
-      --muted: #9aa3b2;
-      --line: #2a313c;
+      --surface: #1b212b;
+      --ink: #e8eaee;
+      --muted: #a3acba;
       --accent: #7fb0e0;
-      --accent-soft: #1f2a38;
+      --accent-ink: #12161d;
+      --bar: #3a4352;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
     body {
       margin: 0;
       background: var(--bg);
-      color: var(--text);
-      font: 16px/1.65 "Inter", system-ui, sans-serif;
+      color: var(--ink);
+      font: 400 var(--step-body)/1.6 var(--text);
       -webkit-font-smoothing: antialiased;
     }
-    a { color: var(--accent); }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    a:hover { color: var(--accent); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+    ::selection { background: var(--accent); color: var(--accent-ink); }
+    h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+    ul, ol { list-style: none; padding: 0; }
+    img { display: block; max-width: 100%; }
 
-    /* Navegación */
-    nav {
-      position: sticky; top: 0; z-index: 10;
-      background: color-mix(in srgb, var(--bg) 88%, transparent);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--line);
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 0 var(--margin); }
+    .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap); }
+
+    .skip {
+      position: absolute; left: var(--margin); top: -60px; z-index: 20;
+      background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 999px;
     }
-    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; gap: 16px; }
-    nav .brand { font-weight: 700; text-decoration: none; color: var(--text); white-space: nowrap; }
-    nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; overflow-x: auto; }
-    nav ul a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; white-space: nowrap; }
-    nav ul a:hover { color: var(--accent); }
+    .skip:focus { top: 12px; }
+
+    /* Botones: una forma, totalmente redondeada */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 48px;
+      padding: 0 24px; border-radius: 999px; font-weight: 600; text-decoration: none;
+      background: var(--accent); color: var(--accent-ink);
+      transition: transform .2s var(--ease), background-color .2s var(--ease);
+    }
+    .btn:hover { color: var(--accent-ink); transform: translateY(-2px); }
+    .btn:active { transform: translateY(0) scale(.98); }
+    .text-link { font-weight: 600; transition: color .2s var(--ease); }
+
+    /* Barra de navegación */
+    .bar { position: sticky; top: 0; z-index: 10; background: var(--bg); }
+    .bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 72px; }
+    .wordmark { font-family: var(--display); font-weight: 600; font-size: 1.25rem; text-decoration: none; }
+    .bar nav { display: flex; align-items: center; gap: 28px; }
+    .bar nav ul { display: flex; gap: 24px; }
+    .bar nav ul a { text-decoration: none; color: var(--muted); transition: color .2s var(--ease); }
+    .bar nav ul a:hover { color: var(--ink); }
+    .bar .btn { min-height: 40px; padding: 0 18px; }
 
     /* Portada */
-    header.hero { padding: 88px 0 64px; }
-    .eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 12px; }
-    h1 {
-      font-family: "Fraunces", Georgia, serif; font-weight: 600;
-      font-size: clamp(2.3rem, 6vw, 3.8rem); line-height: 1.08; margin: 0 0 20px;
+    .hero { padding: clamp(48px, 9vh, 112px) 0 var(--section); }
+    .hero .grid { align-items: start; }
+    .hero-text { grid-column: 1 / span 7; }
+    .hero h1 {
+      font-family: var(--display); font-weight: 600; font-size: var(--step-display);
+      line-height: .98; letter-spacing: -0.025em;
     }
-    .lead { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin: 0 0 32px; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn {
-      display: inline-block; padding: 11px 20px; border-radius: 999px;
-      font-weight: 600; font-size: 15px; text-decoration: none;
-      border: 1px solid var(--accent);
-    }
-    .btn.primary { background: var(--accent); color: var(--bg); }
-    .btn.ghost { color: var(--accent); }
-    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 48px; max-width: 620px; }
-    .stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
-    .stat b { display: block; font-family: "Fraunces", Georgia, serif; font-size: 1.8rem; color: var(--accent); line-height: 1.1; }
-    .stat span { font-size: 13px; color: var(--muted); }
+    .hero .role { font-family: var(--display); font-weight: 500; font-size: var(--step-statement); line-height: 1.3; margin-top: 28px; }
+    .hero .lead { max-width: 54ch; margin-top: 16px; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; margin-top: 48px; }
+    .figures { display: flex; flex-wrap: wrap; gap: 24px 56px; margin-top: 40px; }
+    .figures div { display: flex; flex-direction: column; }
+    .figures b { font-family: var(--display); font-weight: 600; font-size: var(--step-heading); line-height: 1; }
+    .figures span { color: var(--muted); font-size: var(--step-small); margin-top: 8px; }
+    .hero-photo { grid-column: 8 / span 5; margin-top: 12px; }
+    .hero-photo .slides { aspect-ratio: auto; height: min(66vh, 640px); min-height: 420px; }
+
+    /* Fotos: un solo tratamiento, en escala de grises y esquinas rectas */
+    .photo { position: relative; overflow: hidden; background: var(--surface); }
+    .photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.06); }
+    .slides { aspect-ratio: 4 / 5; }
+    .slides img { position: absolute; inset: 0; opacity: 0; transform: scale(1.06); transition: opacity 1.6s ease, transform 8s linear; }
+    .slides img.is-on { opacity: 1; transform: scale(1); }
+    figcaption { color: var(--muted); font-size: var(--step-small); margin-top: 12px; min-height: 1.6em; }
 
     /* Secciones */
-    section { padding: 56px 0; border-top: 1px solid var(--line); }
-    h2 { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.9rem; margin: 0 0 28px; }
-    h3 { font-size: 1.05rem; margin: 0; }
-    p { margin: 0 0 14px; }
+    section { padding-bottom: var(--section); }
+    h2 { font-family: var(--display); font-weight: 600; font-size: var(--step-heading); line-height: 1.1; letter-spacing: -0.015em; }
+    h3 { font-size: var(--step-body); font-weight: 600; line-height: 1.4; }
+    .section-head { grid-column: 1 / -1; margin-bottom: 48px; }
+    .section-head p { max-width: 60ch; margin-top: 16px; }
+    .statement { font-family: var(--display); font-weight: 500; font-size: var(--step-statement); line-height: 1.35; max-width: 34ch; }
+    .soft { color: var(--muted); }
+    .small { font-size: var(--step-small); }
 
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
-    .chips li { background: var(--accent-soft); color: var(--accent); padding: 5px 12px; border-radius: 999px; font-size: 14px; font-weight: 500; }
-    .skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
-    .card h3 { margin-bottom: 14px; }
+    /* Sobre mí */
+    .facts { grid-column: 1 / span 3; display: flex; flex-direction: column; gap: 20px; }
+    .facts dt { color: var(--muted); font-size: var(--step-small); }
+    .facts dd { font-weight: 500; }
+    .about-text { grid-column: 5 / span 8; }
+    .about-text p + p { margin-top: 18px; }
+    .about-text .statement + p { margin-top: 32px; }
+    .about-text p:not(.statement) { max-width: 62ch; }
 
-    /* Experiencia */
-    .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
-    .timeline::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
-    .job { position: relative; padding: 0 0 32px 36px; }
-    .job::before {
-      content: ""; position: absolute; left: 0; top: 6px; width: 16px; height: 16px;
-      border-radius: 50%; background: var(--bg); border: 3px solid var(--accent);
+    /* Habilidades */
+    .skills { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px var(--gap); padding: 48px; background: var(--surface); }
+    .skills h3 { margin-bottom: 16px; }
+    .skills li { color: var(--muted); line-height: 1.75; transition: color .2s var(--ease); }
+    .skills li:hover { color: var(--ink); }
+
+    /* Experiencia: la trayectoria como carta Gantt */
+    .gantt { grid-column: 1 / -1; background: var(--surface); padding: 40px 48px 44px; margin-bottom: 96px; }
+    .no-js-hide { display: none; }
+    .js .gantt.no-js-hide { display: block; }
+    .gantt-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 24px 48px; align-items: start; }
+    .gantt-year { font-family: var(--display); font-weight: 600; font-size: var(--step-display); line-height: .9; letter-spacing: -0.025em; font-variant-numeric: tabular-nums; }
+    .gantt-out h3 + p { margin-top: 2px; }
+    .gantt-out .tech { margin-top: 10px; }
+    .gantt-out article + article { margin-top: 20px; }
+    .track { position: relative; height: 28px; margin-top: 40px; }
+    .track button {
+      position: absolute; top: 0; height: 100%; padding: 0; border: 0; cursor: pointer;
+      background: var(--bar); border-radius: 3px; min-width: 6px;
+      transition: background-color .25s var(--ease), transform .25s var(--ease);
     }
-    .job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
-    .job .when { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
-    .job .org { color: var(--accent); font-weight: 500; margin: 2px 0 8px; }
-    .job p { color: var(--muted); }
+    .track button:hover { transform: scaleY(1.25); }
+    .track button.is-on { background: var(--accent); }
+    .years { display: flex; justify-content: space-between; color: var(--muted); font-size: var(--step-small); margin-top: 10px; font-variant-numeric: tabular-nums; }
+    .slider { display: flex; align-items: center; gap: 16px; margin-top: 20px; }
+    .slider label { font-size: var(--step-small); color: var(--muted); white-space: nowrap; }
+    .slider input { flex: 1; height: 44px; accent-color: var(--accent); cursor: pointer; }
 
-    /* Proyectos */
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
-    .project .client { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
-    .project h3 { margin: 4px 0 6px; }
-    .project .meta { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
-    .project .tech { font-size: 13px; color: var(--muted); margin: 0; }
+    .exp-photo { grid-column: 1 / span 4; align-self: start; position: sticky; top: 104px; }
+    .exp-photo .photo { aspect-ratio: 3 / 4; }
+    .jobs { grid-column: 6 / span 7; display: flex; flex-direction: column; gap: 40px; }
+    .job { transition: opacity .3s var(--ease); }
+    .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4px 24px; flex-wrap: wrap; }
+    .when { color: var(--muted); font-size: var(--step-small); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .org { color: var(--muted); margin: 2px 0 8px; }
+    .job.is-on h3 { color: var(--accent); }
+
+    /* Proyectos: libro de registro */
+    .ledger { grid-column: 1 / span 9; }
+    .ledger li {
+      display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 6.5rem; gap: 4px 24px; align-items: baseline;
+      padding: 14px 0; transition: opacity .25s var(--ease);
+    }
+    .ledger:hover li:not(:hover) { opacity: .55; }
+    .ledger .name { font-weight: 600; }
+    .ledger .kind { color: var(--muted); }
+    .ledger .when { text-align: right; }
+    .ledger .tech { grid-column: 1 / span 2; color: var(--muted); font-size: var(--step-small); }
+    .proj-photo { grid-column: 10 / span 3; align-self: start; position: sticky; top: 104px; }
+    .proj-photo .photo { aspect-ratio: 2 / 3; }
 
     /* Formación */
-    .edu { display: grid; grid-template-columns: 1fr; gap: 0; }
-    .edu-item { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
-    .edu-item:last-child { border-bottom: 0; }
-    .edu-item small { display: block; color: var(--muted); font-size: 14px; }
-    .edu-item .when { color: var(--muted); font-size: 14px; white-space: nowrap; }
+    .edu { grid-column: 1 / span 5; display: flex; flex-direction: column; gap: 40px; }
+    .courses { grid-column: 7 / span 6; }
+    .rows li { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 10px 0; }
+    .rows small { display: block; color: var(--muted); font-size: var(--step-small); }
+    .edu h3, .courses h3 { margin-bottom: 8px; }
 
     /* Contacto */
-    .contact { text-align: center; padding: 72px 0 88px; }
-    .contact p { color: var(--muted); max-width: 520px; margin: 0 auto 24px; }
-    footer { text-align: center; color: var(--muted); font-size: 13px; padding: 24px 0 40px; }
+    .contact { padding: clamp(72px, 9vw, 128px) 0; background: var(--surface); }
+    .contact .statement { font-size: clamp(1.4rem, 2.2vw, 2rem); }
+    .contact .grid { align-items: start; row-gap: 40px; }
+    .contact-lead { grid-column: 1 / span 6; }
+    .contact-lead .statement { margin-top: 24px; }
+    .contact-lead .btn { margin-top: 32px; }
+    .contact-photo { grid-column: 8 / span 2; }
+    .contact-photo .photo { aspect-ratio: 1; }
+    .contact-links { grid-column: 10 / span 3; display: flex; flex-direction: column; gap: 12px; }
+    .contact-links p:first-child { font-weight: 600; }
+    .contact-links a { font-size: 1.125rem; overflow-wrap: anywhere; }
 
-    @media (max-width: 640px) {
-      nav ul { display: none; }
-      header.hero { padding: 56px 0 40px; }
-      .stats { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-      .stat { padding: 12px; }
-      .stat b { font-size: 1.4rem; }
-      .edu-item { flex-direction: column; gap: 2px; }
+    /* Pie */
+    footer { padding: 120px 0 32px; }
+    .credits { font-size: var(--step-small); color: var(--muted); max-width: 90ch; margin-bottom: 32px; }
+    .foot { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px 24px; align-items: baseline; color: var(--muted); }
+    .foot nav { display: flex; gap: 24px; }
+    .foot nav a { color: var(--ink); }
+    .foot p:last-child { text-align: right; }
+
+    /* Entradas: solo con script, nunca dejan contenido oculto */
+    .js [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); transition-delay: var(--d, 0ms); }
+    .js [data-reveal].is-in { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; }
+      .js [data-reveal] { opacity: 1; transform: none; }
+      .slides img { transform: none; }
+    }
+
+    @media (max-width: 1080px) {
+      .bar nav ul { display: none; }
+      .hero-text { grid-column: 1 / -1; }
+      .hero-photo { grid-column: 1 / -1; margin-top: 56px; }
+      .hero-photo .slides { aspect-ratio: 3 / 2; height: auto; min-height: 0; }
+      .facts { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px var(--gap); margin-bottom: 40px; }
+      .about-text { grid-column: 1 / -1; }
+      .exp-photo { grid-column: 1 / span 5; }
+      .jobs { grid-column: 7 / span 6; }
+      .ledger { grid-column: 1 / span 8; }
+      .proj-photo { grid-column: 9 / span 4; }
+      .contact-lead { grid-column: 1 / -1; }
+      .contact-photo { grid-column: 1 / span 3; }
+      .contact-links { grid-column: 4 / span 9; }
+    }
+
+    @media (max-width: 720px) {
+      .hero-photo, .exp-photo, .jobs, .ledger, .proj-photo, .edu, .courses { grid-column: 1 / -1; }
+      .hero-photo .slides { aspect-ratio: 4 / 3; height: auto; min-height: 0; }
+      .hero .role { margin-top: 20px; }
+      .figures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 36px; }
+      .figures b { font-size: 2rem; }
+      .facts { grid-template-columns: 1fr 1fr; }
+      .skills { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
+      .gantt { padding: 28px 20px 24px; margin-bottom: 64px; }
+      .gantt-top { grid-template-columns: 1fr; }
+      .gantt-year { font-size: 3.5rem; }
+      .years span:nth-child(even) { visibility: hidden; }
+      .exp-photo { position: static; margin-bottom: 48px; }
+      .exp-photo .photo { aspect-ratio: 16 / 10; }
+      .proj-photo { position: static; margin-top: 40px; }
+      .proj-photo .photo { aspect-ratio: 16 / 10; }
+      .ledger li { grid-template-columns: minmax(0, 1fr) auto; padding: 12px 0; }
+      .ledger .kind { grid-column: 1 / -1; grid-row: 2; font-size: var(--step-small); }
+      .ledger .tech { grid-column: 1 / -1; }
+      .courses { margin-top: 48px; }
+      .contact-photo { grid-column: 1 / span 4; }
+      .contact-links { grid-column: 5 / -1; }
+      .contact-links a { font-size: var(--step-body); }
+      footer { padding-top: 80px; }
+      .foot { grid-template-columns: 1fr; gap: 8px; }
+      .foot p:last-child { text-align: left; }
+    }
+
+    @media print {
+      .bar, .skip, .hero-photo, .exp-photo, .proj-photo, .contact-photo, .gantt, .actions, .contact-lead .btn { display: none !important; }
+      body { background: #fff; color: #000; }
+      section { padding-bottom: 32px; break-inside: avoid-page; }
+      .hero { padding: 0 0 32px; }
+      .js [data-reveal] { opacity: 1; transform: none; }
+      footer { padding: 0; }
     }
   </style>
 </head>
 <body>
 
-<nav>
-  <div class="wrap">
-    <a class="brand" href="#inicio">Ariel Parra</a>
-    <ul>
-      <li><a href="#sobre-mi">Sobre mí</a></li>
-      <li><a href="#habilidades">Habilidades</a></li>
-      <li><a href="#experiencia">Experiencia</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#formacion">Formación</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </div>
-</nav>
+<a class="skip" href="#contenido">Saltar al contenido</a>
 
-<header class="hero" id="inicio">
+<header class="bar">
   <div class="wrap">
-    <p class="eyebrow">Jefe de Proyectos TI · Santiago, Chile</p>
-    <h1>Ariel Iván Parra Fernández</h1>
-    <p class="lead">Ingeniero en Gestión Informática. Llevo más de 20 años construyendo y liderando software, primero como desarrollador y analista, y hoy dirigiendo proyectos en el sector público.</p>
-    <div class="actions">
-      <a class="btn primary" href="mailto:aparraf@gmail.com">Contáctame</a>
-      <a class="btn ghost" href="#experiencia">Ver experiencia</a>
-    </div>
-    <div class="stats">
-      <div class="stat"><b>20+</b><span>años de experiencia</span></div>
-      <div class="stat"><b>4+</b><span>años como Jefe de Proyectos</span></div>
-      <div class="stat"><b>15+</b><span>organizaciones atendidas</span></div>
-    </div>
+    <a class="wordmark" href="#inicio">Ariel Parra</a>
+    <nav aria-label="Secciones">
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#formacion">Formación</a></li>
+      </ul>
+      <a class="btn" href="#contacto">Contacto</a>
+    </nav>
   </div>
 </header>
 
+<main id="contenido">
+
+<section class="hero" id="inicio">
+  <div class="wrap grid">
+    <div class="hero-text">
+      <h1 data-reveal>Ariel Iván<br>Parra Fernández</h1>
+      <p class="role" data-reveal style="--d:80ms">Jefe de Proyectos TI en Santiago de Chile.</p>
+      <p class="lead" data-reveal style="--d:160ms">Ingeniero en Gestión Informática. Llevo más de 20 años construyendo y liderando software, primero como desarrollador y analista, y hoy dirigiendo proyectos en el sector público.</p>
+      <div class="figures" data-reveal style="--d:240ms">
+        <div><b>20+</b><span>años de experiencia</span></div>
+        <div><b>4+</b><span>años como Jefe de Proyectos</span></div>
+        <div><b>15+</b><span>organizaciones atendidas</span></div>
+      </div>
+      <div class="actions" data-reveal style="--d:320ms">
+        <a class="btn" href="mailto:aparraf@gmail.com">Escríbeme</a>
+        <a class="text-link" href="#experiencia">Ver mi trayectoria</a>
+      </div>
+    </div>
+    <figure class="hero-photo" data-reveal style="--d:200ms">
+      <div class="photo slides" id="slides">
+        <img class="is-on" src="assets/ips.jpg" width="1200" height="1800" alt="Fachada del edificio del Instituto de Previsión Social en Santiago" data-caption="Edificio del Instituto de Previsión Social, Santiago.">
+        <img src="assets/atardecer.jpg" width="1200" height="1594" alt="Santiago al atardecer, con la torre Entel y el Barrio Cívico" data-caption="Santiago al atardecer, desde el Barrio Cívico." loading="lazy">
+        <img src="assets/andes.jpg" width="1024" height="768" alt="Edificios de Santiago con la cordillera de los Andes al fondo" data-caption="Santiago y la cordillera de los Andes." loading="lazy">
+        <img src="assets/barrio-civico.jpg" width="1200" height="1800" alt="Edificio de oficinas en el Barrio Cívico de Santiago" data-caption="Edificio del Barrio Cívico, Santiago." loading="lazy">
+      </div>
+      <figcaption id="slides-caption" aria-live="off">Edificio del Instituto de Previsión Social, Santiago.</figcaption>
+    </figure>
+  </div>
+</section>
+
 <section id="sobre-mi">
-  <div class="wrap">
-    <h2>Sobre mí</h2>
-    <p>Me titulé de Ingeniero en Gestión Informática en la Universidad Técnica de Chile (INACAP). La mayor parte de mi carrera la he dedicado al desarrollo y análisis de aplicaciones de escritorio y web, enfocado en arquitectura de software y modelamiento de datos. He trabajado como analista de sistemas y desarrollador senior en equipos ágiles, y como líder técnico en proyectos pequeños y medianos.</p>
-    <p>Desde 2022 trabajo como Jefe de Proyecto. Levanto y analizo requerimientos y diseño soluciones con enfoques ágiles, tradicionales o híbridos. También coordino a usuarios y equipos en todas las fases del proyecto y reporto los avances para cumplir los objetivos de costo, plazo y calidad.</p>
+  <div class="wrap grid">
+    <div class="section-head" data-reveal><h2>Sobre mí</h2></div>
+    <dl class="facts" data-reveal style="--d:80ms">
+      <div><dt>Ciudad</dt><dd>Santiago, Chile</dd></div>
+      <div><dt>Hoy</dt><dd>Jefe de Proyectos para el IPS</dd></div>
+      <div><dt>Título</dt><dd>Ingeniero en Gestión Informática, INACAP</dd></div>
+      <div><dt>Certificación</dt><dd>Scrum Master Professional, CertiProf</dd></div>
+    </dl>
+    <div class="about-text">
+      <p class="statement" data-reveal style="--d:120ms">Empecé programando, pasé por el análisis y el liderazgo técnico, y desde 2022 dirijo proyectos.</p>
+      <p data-reveal style="--d:180ms">Me titulé de Ingeniero en Gestión Informática en la Universidad Técnica de Chile (INACAP). La mayor parte de mi carrera la he dedicado al desarrollo y análisis de aplicaciones de escritorio y web, enfocado en arquitectura de software y modelamiento de datos. He trabajado como analista de sistemas y desarrollador senior en equipos ágiles, y como líder técnico en proyectos pequeños y medianos.</p>
+      <p data-reveal style="--d:240ms">Desde 2022 trabajo como Jefe de Proyecto. Levanto y analizo requerimientos y diseño soluciones con enfoques ágiles, tradicionales o híbridos. También coordino a usuarios y equipos en todas las fases del proyecto y reporto los avances para cumplir los objetivos de costo, plazo y calidad.</p>
+    </div>
   </div>
 </section>
 
 <section id="habilidades">
-  <div class="wrap">
-    <h2>Habilidades</h2>
-    <div class="skill-groups">
-      <div class="card">
+  <div class="wrap grid">
+    <div class="section-head" data-reveal>
+      <h2>Habilidades</h2>
+      <p>Lo que uso para dirigir un proyecto, construirlo y ordenar sus datos.</p>
+    </div>
+    <div class="skills">
+      <div data-reveal>
         <h3>Gestión de proyectos</h3>
-        <ul class="chips">
+        <ul>
           <li>Scrum</li><li>Enfoques híbridos</li><li>Levantamiento de requerimientos</li>
           <li>Historias de usuario</li><li>Gestión de riesgos</li><li>Gestión del cambio</li>
           <li>Cartas Gantt</li><li>Bases de licitación</li>
         </ul>
       </div>
-      <div class="card">
+      <div data-reveal style="--d:80ms">
         <h3>Desarrollo</h3>
-        <ul class="chips">
-          <li>C#</li><li>VB .NET</li><li>.NET Core</li><li>ASP.NET MVC</li>
-          <li>LINQ</li><li>Entity Framework</li><li>Servicios REST</li>
-          <li>JavaScript</li><li>jQuery</li><li>Ajax</li><li>HTML5 / CSS3</li>
-          <li>Bootstrap</li><li>DevExpress</li><li>Java / Spring MVC</li>
+        <ul>
+          <li>C#, VB .NET y .NET Core</li><li>ASP.NET MVC</li><li>LINQ y Entity Framework</li>
+          <li>Servicios REST</li><li>JavaScript, jQuery y Ajax</li><li>HTML5 y CSS3</li>
+          <li>Bootstrap y DevExpress</li><li>Java y Spring MVC</li>
         </ul>
       </div>
-      <div class="card">
+      <div data-reveal style="--d:160ms">
         <h3>Datos y herramientas</h3>
-        <ul class="chips">
+        <ul>
           <li>SQL Server</li><li>Oracle (PL/SQL)</li><li>Modelamiento de datos</li>
-          <li>Diccionarios de datos</li><li>GitLab</li><li>SVN</li><li>TFS</li>
+          <li>Diccionarios de datos</li><li>GitLab, SVN y TFS</li>
           <li>GitHub Copilot</li><li>Mockups</li>
         </ul>
       </div>
@@ -216,62 +412,84 @@
 </section>
 
 <section id="experiencia">
-  <div class="wrap">
-    <h2>Experiencia</h2>
-    <ol class="timeline">
-      <li class="job">
+  <div class="wrap grid">
+    <div class="section-head" data-reveal>
+      <h2>Experiencia</h2>
+      <p>Mueve el año para ver qué hacía, para quién y con qué tecnologías.</p>
+    </div>
+
+    <div class="gantt no-js-hide" data-reveal style="--d:80ms">
+      <div class="gantt-top">
+        <p class="gantt-year" id="g-year">2026</p>
+        <div class="gantt-out" id="g-out" aria-live="polite"></div>
+      </div>
+      <div class="track" id="g-track"></div>
+      <div class="years" aria-hidden="true"><span>2002</span><span>2006</span><span>2010</span><span>2014</span><span>2018</span><span>2022</span><span>2026</span></div>
+      <div class="slider">
+        <label for="g-range">Año</label>
+        <input type="range" id="g-range" min="2002" max="2026" step="1" value="2026">
+      </div>
+    </div>
+
+    <figure class="exp-photo" data-reveal>
+      <div class="photo"><img src="assets/ips.jpg" width="1200" height="1800" alt="Fachada del edificio del Instituto de Previsión Social en Santiago" loading="lazy"></div>
+      <figcaption>Edificio del Instituto de Previsión Social, Santiago.</figcaption>
+    </figure>
+
+    <ol class="jobs">
+      <li class="job" id="job-10" data-reveal>
         <div class="job-head"><h3>Jefe de Proyectos</h3><span class="when">Oct 2025 – Actual</span></div>
-        <div class="org">Valposystems · Instituto de Previsión Social (IPS)</div>
+        <p class="org">Valposystems · Instituto de Previsión Social (IPS)</p>
         <p>Análisis y diseño de soluciones para el negocio de asignaciones familiares, en especial la cuenta corriente de asignaciones familiares y los informes financieros. Especificaciones de requerimientos, historias de usuario, modelos de datos y desarrollo en Oracle (tablas, packages y procedimientos), además de la coordinación del paso a QA y producción.</p>
       </li>
-      <li class="job">
+      <li class="job" id="job-9" data-reveal>
         <div class="job-head"><h3>Jefe de Proyectos</h3><span class="when">Feb 2024 – Ago 2025</span></div>
-        <div class="org">Tecnova IT Solutions · Instituto de Previsión Social (IPS)</div>
+        <p class="org">Tecnova IT Solutions · Instituto de Previsión Social (IPS)</p>
         <p>Diseño de soluciones para la cuenta corriente de asignaciones familiares y los informes financieros. Definición de objetivos y alcance, planes de trabajo, gestión de riesgos y de las partes interesadas, y modelos de datos y mockups.</p>
       </li>
-      <li class="job">
+      <li class="job" id="job-8" data-reveal>
         <div class="job-head"><h3>Jefe de Proyectos</h3><span class="when">Abr 2022 – Ene 2024</span></div>
-        <div class="org">KPAZ · Instituto de Previsión Social (IPS)</div>
+        <p class="org">KPAZ · Instituto de Previsión Social (IPS)</p>
         <p>Proyectos de asignaciones familiares y de la Pensión Garantizada Universal (PGU). Bases de licitación, actas de inicio, cartas Gantt, seguimiento de avances y gestión del cambio.</p>
       </li>
-      <li class="job">
+      <li class="job" id="job-7" data-reveal>
         <div class="job-head"><h3>Analista Desarrollador Senior</h3><span class="when">Ene 2021 – Mar 2022</span></div>
-        <div class="org">KPAZ · Banco Itaú</div>
+        <p class="org">KPAZ · Banco Itaú</p>
         <p>Líder de desarrollo de la aplicación web de control y gestión de proyectos del área de Robotics. Usé .NET Core, MVC C#, SQL Server 2014, jQuery UI y Bootstrap.</p>
       </li>
-      <li class="job">
+      <li class="job" id="job-6" data-reveal>
         <div class="job-head"><h3>Analista Desarrollador Backend Senior</h3><span class="when">Nov 2019 – Mar 2020</span></div>
-        <div class="org">Kibernum · Legaltec</div>
+        <p class="org">Kibernum · Legaltec</p>
         <p>Servicios de Windows para la inscripción electrónica de vehículos (proyecto SPIEV), integrados con los servicios del SII.</p>
       </li>
-      <li class="job">
+      <li class="job" id="job-5" data-reveal>
         <div class="job-head"><h3>Desarrollador Senior, Analista de Sistemas</h3><span class="when">Jun 2019 – Sep 2019</span></div>
-        <div class="org">Fiusoft · Isapre Consalud</div>
+        <p class="org">Fiusoft · Isapre Consalud</p>
         <p>Sistema web de Insuficiencias y Complementos, con C# MVC, servicios Fuse, BPM y Oracle.</p>
       </li>
-      <li class="job">
+      <li class="job" id="job-4" data-reveal>
         <div class="job-head"><h3>Desarrollador Senior, Analista de Sistemas</h3><span class="when">Jul 2016 – Mar 2019</span></div>
-        <div class="org">Intellego (Axity) · Vida Cámara</div>
+        <p class="org">Intellego (Axity) · Vida Cámara</p>
         <p>Cotizador web, renovación automática de pólizas y sitio privado de clientes, con VB .NET, REST, jqWidgets, Bootstrap y SQL Server.</p>
       </li>
-      <li class="job">
+      <li class="job" id="job-3" data-reveal>
         <div class="job-head"><h3>Ingeniero de Software</h3><span class="when">Jul 2014 – Abr 2016</span></div>
-        <div class="org">Softmaker</div>
+        <p class="org">Softmaker</p>
         <p>Sistema de leasing con C# .NET, DevExpress y SQL Server 2012.</p>
       </li>
-      <li class="job">
+      <li class="job" id="job-2" data-reveal>
         <div class="job-head"><h3>Analista Desarrollador Senior y Líder Técnico</h3><span class="when">Abr 2006 – Feb 2014</span></div>
-        <div class="org">Anticipa S.A.</div>
+        <p class="org">Anticipa S.A.</p>
         <p>Proyectos para Servipag, Falabella Viajes, ChileCompra, MINVU, SENCE, Entel y otros. Hice desarrollo, análisis de requerimientos, modelamiento de datos y arquitectura de software.</p>
       </li>
-      <li class="job">
+      <li class="job" id="job-1" data-reveal>
         <div class="job-head"><h3>Desarrollador e Instalador de Aplicaciones Web</h3><span class="when">Ago 2005 – Mar 2006</span></div>
-        <div class="org">Argentis S.A.</div>
+        <p class="org">Argentis S.A.</p>
         <p>Desarrollo e instalación del gestor de contenidos NeoPortal para empresas como Agrosuper, BHP Billiton y Vida Integra.</p>
       </li>
-      <li class="job">
+      <li class="job" id="job-0" data-reveal>
         <div class="job-head"><h3>Desarrollador y Soporte Técnico</h3><span class="when">May 2002 – Ago 2005</span></div>
-        <div class="org">AFEX S.A.</div>
+        <p class="org">AFEX S.A.</p>
         <p>Sistemas de remuneraciones y de giros nacionales e internacionales en Visual Basic 6 y SQL Server 7. También administré la central telefónica Alcatel A4400.</p>
       </li>
     </ol>
@@ -279,102 +497,182 @@
 </section>
 
 <section id="proyectos">
-  <div class="wrap">
-    <h2>Proyectos destacados</h2>
-    <div class="projects">
-      <article class="card project">
-        <div class="client">MINVU</div>
-        <h3>Pago de Beneficios Dentales</h3>
-        <p class="meta">Líder Técnico · 2013 – 2014</p>
-        <p class="tech">C# MVC, SQL Server 2008 R2, jQuery UI</p>
-      </article>
-      <article class="card project">
-        <div class="client">MINVU</div>
-        <h3>Pago de Beneficios Médicos</h3>
-        <p class="meta">Analista Programador · 2012 – 2013</p>
-        <p class="tech">C# MVC, SQL Server 2008 R2, Ajax</p>
-      </article>
-      <article class="card project">
-        <div class="client">MINVU</div>
-        <h3>Trazabilidad 2 · Proyecto MUNIN</h3>
-        <p class="meta">Analista Programador · 2014</p>
-        <p class="tech">C# MVC (TFS), SQL Server 2008 R2</p>
-      </article>
-      <article class="card project">
-        <div class="client">SENCE</div>
-        <h3>Programas de Capacitación</h3>
-        <p class="meta">Analista Programador · 2013</p>
-        <p class="tech">C# MVC, SQL Server 2008 R2</p>
-      </article>
-      <article class="card project">
-        <div class="client">Entel</div>
-        <h3>Máxima Conexión · Gestión Web</h3>
-        <p class="meta">Analista Programador · 2013</p>
-        <p class="tech">Spring MVC, WebLogic, Oracle</p>
-      </article>
-      <article class="card project">
-        <div class="client">Falabella Viajes</div>
-        <h3>ProductCore · Motor de Productos</h3>
-        <p class="meta">Analista Programador · 2010 – 2011</p>
-        <p class="tech">C# .NET, SQL Server 2005</p>
-      </article>
-      <article class="card project">
-        <div class="client">ChileCompra</div>
-        <h3>Control de Descarga Masiva de Adjuntos</h3>
-        <p class="meta">Analista Programador · 2011 – 2012</p>
-        <p class="tech">VB .NET Web Forms, SQL Server 2005</p>
-      </article>
-      <article class="card project">
-        <div class="client">Servipag</div>
-        <h3>Proyecto Proteus</h3>
-        <p class="meta">Área de aplicaciones · 2006 – 2009</p>
-        <p class="tech">C# Web Forms, XML/XSL, SQL Server 2000</p>
-      </article>
+  <div class="wrap grid">
+    <div class="section-head" data-reveal>
+      <h2>Proyectos destacados</h2>
+      <p>Proyectos en los que participé como analista programador y líder técnico en Anticipa.</p>
     </div>
+    <ul class="ledger">
+      <li data-reveal><span class="name">Pago de Beneficios Dentales</span><span class="kind">MINVU · Líder Técnico</span><span class="when">2013 – 2014</span><span class="tech">C# MVC, SQL Server 2008 R2, jQuery UI</span></li>
+      <li data-reveal><span class="name">Pago de Beneficios Médicos</span><span class="kind">MINVU · Analista Programador</span><span class="when">2012 – 2013</span><span class="tech">C# MVC, SQL Server 2008 R2, Ajax</span></li>
+      <li data-reveal><span class="name">Trazabilidad 2, proyecto MUNIN</span><span class="kind">MINVU · Analista Programador</span><span class="when">2014</span><span class="tech">C# MVC (TFS), SQL Server 2008 R2</span></li>
+      <li data-reveal><span class="name">Programas de Capacitación</span><span class="kind">SENCE · Analista Programador</span><span class="when">2013</span><span class="tech">C# MVC, SQL Server 2008 R2</span></li>
+      <li data-reveal><span class="name">Máxima Conexión, gestión web</span><span class="kind">Entel · Analista Programador</span><span class="when">2013</span><span class="tech">Spring MVC, WebLogic, Oracle</span></li>
+      <li data-reveal><span class="name">Control de Descarga Masiva de Adjuntos</span><span class="kind">ChileCompra · Analista Programador</span><span class="when">2011 – 2012</span><span class="tech">VB .NET Web Forms, SQL Server 2005</span></li>
+      <li data-reveal><span class="name">ProductCore, motor de productos</span><span class="kind">Falabella Viajes · Analista Programador</span><span class="when">2010 – 2011</span><span class="tech">C# .NET, SQL Server 2005</span></li>
+      <li data-reveal><span class="name">Proyecto Proteus</span><span class="kind">Servipag · Área de aplicaciones</span><span class="when">2006 – 2009</span><span class="tech">C# Web Forms, XML/XSL, SQL Server 2000</span></li>
+    </ul>
+    <figure class="proj-photo" data-reveal style="--d:120ms">
+      <div class="photo"><img src="assets/barrio-civico.jpg" width="1200" height="1800" alt="Edificio de oficinas en el Barrio Cívico de Santiago" loading="lazy"></div>
+      <figcaption>Edificio del Barrio Cívico, Santiago.</figcaption>
+    </figure>
   </div>
 </section>
 
 <section id="formacion">
-  <div class="wrap">
-    <h2>Formación</h2>
-    <div class="skill-groups">
-      <div class="card">
+  <div class="wrap grid">
+    <div class="section-head" data-reveal><h2>Formación</h2></div>
+    <div class="edu">
+      <div data-reveal>
         <h3>Educación</h3>
-        <div class="edu">
-          <div class="edu-item"><div>Ingeniería en Gestión Informática<small>Universidad Técnica de Chile (INACAP)</small></div><span class="when">1998 – 2004</span></div>
-        </div>
-        <h3 style="margin-top:24px">Idiomas</h3>
-        <div class="edu">
-          <div class="edu-item"><div>Español<small>Nativo</small></div></div>
-          <div class="edu-item"><div>Inglés<small>Lectura y escritura fluidas, comunicación oral funcional</small></div></div>
-        </div>
+        <ul class="rows">
+          <li><div>Ingeniería en Gestión Informática<small>Universidad Técnica de Chile (INACAP)</small></div><span class="when">1998 – 2004</span></li>
+        </ul>
       </div>
-      <div class="card">
-        <h3>Cursos y certificaciones</h3>
-        <div class="edu">
-          <div class="edu-item"><div>GitHub Copilot<small>Código Facilito</small></div><span class="when">2026</span></div>
-          <div class="edu-item"><div>Habilidades blandas para equipos de trabajo<small>Platzi</small></div><span class="when">2023</span></div>
-          <div class="edu-item"><div>Habilidades blandas para el desarrollo profesional<small>Platzi</small></div><span class="when">2023</span></div>
-          <div class="edu-item"><div>Planificación de proyectos<small>Platzi</small></div><span class="when">2022</span></div>
-          <div class="edu-item"><div>Fundamentos de Project Management<small>Platzi</small></div><span class="when">2022</span></div>
-          <div class="edu-item"><div>Curso práctico de Project Management<small>Platzi</small></div><span class="when">2022</span></div>
-          <div class="edu-item"><div>Scrum Master Professional Certificate<small>CertiProf</small></div><span class="when">2022</span></div>
-          <div class="edu-item"><div>HTML5, CSS3 y JavaScript para WebApps<small>Universidad Politécnica de Madrid</small></div><span class="when">2014</span></div>
-        </div>
+      <div data-reveal style="--d:80ms">
+        <h3>Idiomas</h3>
+        <ul class="rows">
+          <li><div>Español<small>Nativo</small></div></li>
+          <li><div>Inglés<small>Lectura y escritura fluidas, comunicación oral funcional</small></div></li>
+        </ul>
       </div>
+    </div>
+    <div class="courses" data-reveal style="--d:120ms">
+      <h3>Cursos y certificaciones</h3>
+      <ul class="rows">
+        <li><div>GitHub Copilot<small>Código Facilito</small></div><span class="when">2026</span></li>
+        <li><div>Habilidades blandas para equipos de trabajo<small>Platzi</small></div><span class="when">2023</span></li>
+        <li><div>Habilidades blandas para el desarrollo profesional<small>Platzi</small></div><span class="when">2023</span></li>
+        <li><div>Planificación de proyectos<small>Platzi</small></div><span class="when">2022</span></li>
+        <li><div>Fundamentos de Project Management<small>Platzi</small></div><span class="when">2022</span></li>
+        <li><div>Curso práctico de Project Management<small>Platzi</small></div><span class="when">2022</span></li>
+        <li><div>Scrum Master Professional Certificate<small>CertiProf</small></div><span class="when">2022</span></li>
+        <li><div>HTML5, CSS3 y JavaScript para WebApps<small>Universidad Politécnica de Madrid</small></div><span class="when">2014</span></li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section id="contacto" class="contact">
-  <div class="wrap">
-    <h2>Conversemos</h2>
-    <p>¿Tienes un proyecto o una oportunidad en la que pueda aportar? Escríbeme y te respondo a la brevedad.</p>
-    <a class="btn primary" href="mailto:aparraf@gmail.com">aparraf@gmail.com</a>
+  <div class="wrap grid">
+    <div class="contact-lead">
+      <h2 data-reveal>Conversemos</h2>
+      <p class="statement" data-reveal style="--d:80ms">¿Tienes un proyecto o una oportunidad en la que pueda aportar? Escríbeme y te respondo a la brevedad.</p>
+      <a class="btn" href="mailto:aparraf@gmail.com" data-reveal style="--d:160ms">Escríbeme un correo</a>
+    </div>
+    <figure class="contact-photo" data-reveal style="--d:120ms">
+      <div class="photo"><img src="assets/andes.jpg" width="1024" height="768" alt="Edificios de Santiago con la cordillera de los Andes al fondo" loading="lazy"></div>
+    </figure>
+    <div class="contact-links" data-reveal style="--d:200ms">
+      <p>Correo y LinkedIn</p>
+      <a href="mailto:aparraf@gmail.com">aparraf@gmail.com</a>
+      <a href="https://cl.linkedin.com/in/ariel-parra-fernandez-890a9977" rel="me noopener">LinkedIn</a>
+      <p class="soft small">Santiago de Chile</p>
+    </div>
   </div>
 </section>
 
-<footer>© 2026 Ariel Iván Parra Fernández</footer>
+</main>
 
+<footer>
+  <div class="wrap">
+    <p class="credits">Fotografías: <a href="https://commons.wikimedia.org/w/index.php?curid=156723038">“Santiago de Chile al atardecer”</a> de GripeComun, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; <a href="https://commons.wikimedia.org/w/index.php?curid=129353150">“Edificio del Instituto de Previsión Social, Santiago 20220625”</a> y <a href="https://commons.wikimedia.org/w/index.php?curid=129353154">“Edificio del Barrio Cívico, Santiago 20220625”</a> de Carlos Figueroa, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, vía Wikimedia Commons; <a href="https://www.flickr.com/photos/15546071@N04/3484072177">“Santiago &amp; the Andes, Chile”</a> de Skellig2008, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, vía Flickr. Se muestran en escala de grises.</p>
+    <div class="foot">
+      <p>Ariel Parra · Jefe de Proyectos TI</p>
+      <nav aria-label="Contacto"><a href="mailto:aparraf@gmail.com">Correo</a><a href="https://cl.linkedin.com/in/ariel-parra-fernandez-890a9977" rel="me noopener">LinkedIn</a></nav>
+      <p>© 2026</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Entradas al aparecer cada bloque, una sola vez
+  (() => {
+    const targets = document.querySelectorAll('[data-reveal]');
+    if (!('IntersectionObserver' in window)) { targets.forEach((el) => el.classList.add('is-in')); return; }
+    const io = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      }
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+    targets.forEach((el) => io.observe(el));
+    window.addEventListener('load', () => setTimeout(() => {
+      targets.forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) el.classList.add('is-in'); });
+    }, 2500));
+  })();
+
+  // Fundido lento entre las fotos de la portada
+  (() => {
+    const imgs = [...document.querySelectorAll('#slides img')];
+    const caption = document.getElementById('slides-caption');
+    if (imgs.length < 2 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let i = 0, timer;
+    const next = () => {
+      imgs[i].classList.remove('is-on');
+      i = (i + 1) % imgs.length;
+      imgs[i].classList.add('is-on');
+      caption.textContent = imgs[i].dataset.caption;
+    };
+    const start = () => { clearInterval(timer); timer = setInterval(next, 6000); };
+    document.addEventListener('visibilitychange', () => document.hidden ? clearInterval(timer) : start());
+    start();
+  })();
+
+  // La trayectoria como carta Gantt: elegir un año muestra el cargo de ese año
+  (() => {
+    const jobs = [
+      { s: 2002.33, e: 2005.67, role: 'Desarrollador y Soporte Técnico', org: 'AFEX S.A.', tech: 'Visual Basic 6, SQL Server 7' },
+      { s: 2005.58, e: 2006.25, role: 'Desarrollador e Instalador de Aplicaciones Web', org: 'Argentis S.A.', tech: 'Gestor de contenidos NeoPortal' },
+      { s: 2006.25, e: 2014.17, role: 'Analista Desarrollador Senior y Líder Técnico', org: 'Anticipa S.A. · Servipag, Falabella Viajes, ChileCompra, MINVU, SENCE, Entel', tech: 'C# y VB .NET, Spring MVC, SQL Server, Oracle' },
+      { s: 2014.5, e: 2016.33, role: 'Ingeniero de Software', org: 'Softmaker', tech: 'C# .NET, DevExpress, SQL Server 2012' },
+      { s: 2016.5, e: 2019.25, role: 'Desarrollador Senior, Analista de Sistemas', org: 'Intellego (Axity) · Vida Cámara', tech: 'VB .NET, REST, jqWidgets, Bootstrap, SQL Server' },
+      { s: 2019.42, e: 2019.75, role: 'Desarrollador Senior, Analista de Sistemas', org: 'Fiusoft · Isapre Consalud', tech: 'C# MVC, Fuse, BPM, Oracle' },
+      { s: 2019.83, e: 2020.25, role: 'Analista Desarrollador Backend Senior', org: 'Kibernum · Legaltec', tech: 'Servicios de Windows integrados con el SII' },
+      { s: 2021.0, e: 2022.25, role: 'Analista Desarrollador Senior', org: 'KPAZ · Banco Itaú', tech: '.NET Core, MVC C#, SQL Server 2014, jQuery UI, Bootstrap' },
+      { s: 2022.25, e: 2024.08, role: 'Jefe de Proyectos', org: 'KPAZ · Instituto de Previsión Social (IPS)', tech: 'Asignaciones familiares y Pensión Garantizada Universal' },
+      { s: 2024.08, e: 2025.67, role: 'Jefe de Proyectos', org: 'Tecnova IT Solutions · Instituto de Previsión Social (IPS)', tech: 'Cuenta corriente de asignaciones familiares e informes financieros' },
+      { s: 2025.75, e: 2027.0, role: 'Jefe de Proyectos', org: 'Valposystems · Instituto de Previsión Social (IPS)', tech: 'Asignaciones familiares, Oracle (tablas, packages y procedimientos)' }
+    ];
+    const MIN = 2002, MAX = 2027;
+    const track = document.getElementById('g-track');
+    const range = document.getElementById('g-range');
+    const yearEl = document.getElementById('g-year');
+    const out = document.getElementById('g-out');
+    if (!track || !range) return;
+
+    const bars = jobs.map((job, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.style.left = ((job.s - MIN) / (MAX - MIN) * 100) + '%';
+      b.style.width = ((job.e - job.s) / (MAX - MIN) * 100) + '%';
+      b.setAttribute('aria-label', job.role + ', ' + job.org);
+      b.addEventListener('click', () => { range.value = Math.min(2026, Math.floor(job.s)); show(+range.value); });
+      track.appendChild(b);
+      return b;
+    });
+
+    const esc = (t) => t.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+    function show(year) {
+      let active = jobs.map((j, i) => i).filter((i) => jobs[i].s < year + 1 && jobs[i].e > year);
+      if (!active.length) {
+        // Entre un trabajo y otro: muestra el último que terminó
+        const prev = jobs.map((j, i) => i).filter((i) => jobs[i].e <= year + 1);
+        active = prev.length ? [prev[prev.length - 1]] : [0];
+      }
+      yearEl.textContent = year;
+      out.innerHTML = active.slice().reverse().map((i) =>
+        '<article><h3>' + esc(jobs[i].role) + '</h3><p class="soft">' + esc(jobs[i].org) + '</p><p class="tech small soft">' + esc(jobs[i].tech) + '</p></article>'
+      ).join('');
+      bars.forEach((b, i) => b.classList.toggle('is-on', active.includes(i)));
+      document.querySelectorAll('.job').forEach((el) => el.classList.toggle('is-on', active.includes(+el.id.slice(4))));
+    }
+
+    range.addEventListener('input', () => show(+range.value));
+    show(+range.value);
+  })();
+</script>
 </body>
 </html>
